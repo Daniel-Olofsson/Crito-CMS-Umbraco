@@ -1,0 +1,58 @@
+﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<Umbraco.Cms.Core.Models.Blocks.BlockListItem>;
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+
+@{
+    var content = (ContentModels.TeamBlockList)Model.Content;
+    
+    
+    
+    IPublishedContent imageProperty = content.Value<IPublishedContent>("teamBlockImage");
+    string imageUrl = imageProperty is MediaWithCrops mediaEntry ? mediaEntry.Url() : "";
+    
+}
+@using Umbraco.Cms.Core.Models
+
+@*<div class="container">
+  <div class="row">  
+    {
+            IPublishedContent imageProperty = content.Value<IPublishedContent>("teamBlockImage");
+            if (imageProperty != null && imageProperty is MediaWithCrops mediaEntry)
+            {
+                string imageUrl = mediaEntry.Url();
+                <div class="col-md-3">
+                    <div class="image-container d-flex align-items-center justify-content-center">
+                        <img src="@imageUrl" alt="Image" class="img-fluid" />
+                    </div>
+                    <div class="block-text">
+                        <h4>@content.Value("teamBlockName")</h4>
+                        <h4>@content.Value("teamBlockJobTitle")</h4>
+                    </div>
+                </div>
+                
+                
+                
+                
+            }
+        }
+    
+    
+    
+    
+    </div>
+    
+</div>*@
+
+
+
+
+<div class="col-md-2">
+        <div class="card h-100">
+            <div class="image-container d-flex align-items-center justify-content-center">
+                <img src="@imageUrl" alt="Image" class="card-img-top img-fluid" />
+            </div>
+            <div class="card-body">
+                <h5 class="card-title text-muted">@content.Value("teamBlockName")</h5>
+                <p class="card-text text-muted">@content.Value("teamBlockJobTitle")</p>
+            </div>
+        </div>
+</div>

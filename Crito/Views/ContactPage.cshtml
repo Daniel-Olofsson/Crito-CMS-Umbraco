@@ -1,0 +1,116 @@
+﻿@using Crito.Models;
+@using Umbraco.Cms.Web.Common.PublishedModels;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<ContentModels.ContactPage>
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+@{
+    Layout = "_Layout.cshtml";
+    var phoneNumbers = Model.Value<IEnumerable<string>>("contactPhone");
+    var contactEmails = Model.Value<IEnumerable<string>>("contactEmail");
+    var formModel = new FormModel();
+}
+<main>
+    
+<div class="bg-custom-color text-white py-5 position-relative">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <h1 class="center-headingblack">@Model.Value("title")</h1>
+            </div>
+        </div>
+    </div>
+    <img class="position-absolute bottom-0 start-0 w-100" src="~/Images/banner/background-lines-right.svg" alt="Lines Image">
+</div>
+
+
+    <section class="contact-us-section">
+        
+        
+        <div class="container">
+            <div class="row">
+                
+                <div class="col-md-4">
+                    <div class="card h-100 bg-dark text-white">
+                        <div class="card-body">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <h5 class="card-title">Visit Us</h5>
+                            <p class="card-text">@Model.Value("contactAddress")</p>
+                            <p class="card-text">@Model.Value("contactPostalCode"), @Model.Value("contactCity")</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-4">
+                    <div class="card h-100 bg-dark text-white">
+                        <div class="card-body">
+                            <i class="fas fa-phone"></i>
+                            <h5 class="card-title">Call Us</h5>
+                            
+                                @foreach (var numbers in phoneNumbers)
+                                {
+                                    <p>@numbers</p>
+                                }
+                            
+                            
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 bg-dark text-white">
+                        <div class="card-body">
+                            <i class="fas fa-envelope"></i>
+
+                            <h5 class="card-title">Email Us</h5>
+                            @foreach (var emails in contactEmails)
+                            {
+                                
+                                <p class="card-text">@emails</p>
+                            }
+                            
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </section>
+    
+    <section class="contactform-section">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-9">
+                    <div class="contact-form-box">
+                        <h2 class="mb-4">Leave Us Message For Any Information</h2>
+                        @using (Html.BeginUmbracoForm("Index", "Contact", FormMethod.Post))
+                        {
+                            <div asp-validation-summary="ModelOnly"></div>
+                            <div class="mb-3">
+
+                                <input asp-for="@formModel.Name" type="text" class="form-control" id="name" name="name" placeholder="Name*" required>
+                            </div>
+                            <div class="mb-3">
+
+                                <input asp-for="@formModel.Email" type="email" class="form-control" id="email" name="email" placeholder="Email*" required>
+                            </div>
+                            <div class="mb-3">
+
+                                <textarea asp-for="@formModel.Message" class="form-control" id="message" name="message" rows="4" placeholder="Your Message*" required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-outline-primary">Submit</button>
+                        }
+                        @*<form class="form" asp-controller="Contact" asp-action="Index" method="post" noValidate>*@
+                            
+                        @*</form>*@
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+    <section class="contact-map">
+        <iframe class="google-maps" src="@Model.Value("contactGoogleMapsUrl")" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </section>
+    
+    
+</main>

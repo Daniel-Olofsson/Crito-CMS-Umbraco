@@ -1,0 +1,18 @@
+﻿@using Umbraco.Cms.Web.Common.PublishedModels;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<ContentModels.HomePage>
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+@using Umbraco.Cms.Core.Models
+<main>
+    <section class="project-section">
+        <h5 class="red-center">@Model.Value("projectsSmallTitle")</h5>
+        <h3 class="center-heading">@Model.Value("projectsMainTitle")</h3>
+        <div class="container-projects">
+            
+            <div class="project-blocklist">
+                @Html.GetBlockListHtml(Model.ProjectBlockList)
+                @*ProjectBlockList*@
+            </div>
+        </div>
+        
+    </section>
+</main>

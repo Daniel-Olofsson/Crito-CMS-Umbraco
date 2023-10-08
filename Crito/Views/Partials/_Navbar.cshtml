@@ -1,0 +1,61 @@
+﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+@using Umbraco.Cms.Core
+@using Umbraco.Cms.Core.Models.PublishedContent
+@using Umbraco.Cms.Core.Routing
+@using Umbraco.Extensions
+@using Umbraco.Cms.Core.Models
+@inject IPublishedValueFallback PublishedValueFallback
+@inject IPublishedUrlProvider PublishedUrlProvider
+
+
+@{  var site = Model.Root();
+    var selection = Model.Root().Children.Where(x => x.IsVisible(PublishedValueFallback)).ToArray(); }
+
+
+<section>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg">
+        <div class="container">
+            @{
+                            var navbarLogo = Model.Value<MediaWithCrops>("navbarLogo");
+                            if (navbarLogo != null)
+                            {
+                                <a class="navbar-brand" href="/"><img src="@navbarLogo.MediaUrl()" class="custom-showcase-image" alt="@Model.Value("showcaseTitle")" /></a>
+                            }
+                        } 
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item @(site.Id == Model.Id ? "active" : "")">
+                        <a class="nav-link" href="@site.Url()">@site.Name()</a>
+                    </li>
+                    @* 
+                    @if (selection?.Length > 0)
+                    {
+                        @foreach (var item in selection)
+                        {
+                            <li class="nav-item @(item.Id == Model.Id || item.IsAncestor(Model) ? "active" : "")">
+                                <a class="nav-link" href="@item.Url(PublishedUrlProvider)">@item.Name</a>
+                            </li>
+                        }
+                    }
+                    @* Print out all children's pages *@
+                    
+                    @foreach (var child in Model.Children.Where(x => x.ContentType.Alias != "articlePage"))
+                    {
+                        <li class="nav-item">
+                            <a class="nav-link" href="@child.Url(PublishedUrlProvider)">@child.Name</a>
+                        </li>
+                    }
+
+
+                </ul>
+
+
+            </div>
+        </div>
+    </nav>
+</section>

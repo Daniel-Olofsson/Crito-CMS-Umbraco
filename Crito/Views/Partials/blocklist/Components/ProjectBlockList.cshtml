@@ -1,0 +1,33 @@
+﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<Umbraco.Cms.Core.Models.Blocks.BlockListItem>;
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+
+@{
+    var content = (ContentModels.ProjectBlockList)Model.Content;
+    
+}
+@using Umbraco.Cms.Core.Models
+
+<div class="project-box">
+  <div class="block-item">  
+    @{
+            IPublishedContent imageProperty = content.Value<IPublishedContent>("projectBlockImage");
+            if (imageProperty != null && imageProperty is MediaWithCrops mediaEntry)
+            {
+                string imageUrl = mediaEntry.Url();
+                
+                <div class="image-container d-flex align-items-center justify-content-center">
+                    <img src="@imageUrl" alt="Image" class="img-fluid" />
+                </div>
+                
+            }
+        }
+    
+    <div class="block-text">
+            <h4>@content.Value("projectBlockTitle")</h4>
+            <a href="@content.Value("projectBlockUrl")" class="arrow"><span class="arrow">&rarr;</span></a>
+    </div>
+    <div class="line"></div>
+    
+    </div>
+    
+</div>

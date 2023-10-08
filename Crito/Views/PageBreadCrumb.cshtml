@@ -1,0 +1,44 @@
+﻿@using Umbraco.Cms.Web.Common.PublishedModels;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<ContentModels.PageBreadCrumb>
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+@using Umbraco.Cms.Core.Models;
+@using Umbraco.Cms.Core.Models.PublishedContent;
+@using System.Linq;
+
+@{
+	Layout = "_Layout.cshtml";
+	ViewData["Title"] = @Model.Value("title");
+}
+<header>
+    
+    
+</header>
+<main>
+<div class="bg-custom-color text-white py-5 position-relative">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <h1 class="center-headingblack">@Model.Value("title")</h1>
+            </div>
+        </div>
+    </div>
+    <img class="position-absolute bottom-0 start-0 w-100" src="~/Images/banner/background-lines-right.svg" alt="Lines Image">
+</div>
+
+    @{
+        var customerLogos = Model.Value<IEnumerable<IPublishedContent>>("CustomerLogos");
+    }
+
+    @if (customerLogos != null && customerLogos.Any())
+    {
+        <div class="image-gallery">
+            @foreach (var logo in customerLogos)
+            {
+                <img src="@logo.Url()" alt="" class="logo-image" />
+            }
+        </div>
+    }
+
+
+
+</main>

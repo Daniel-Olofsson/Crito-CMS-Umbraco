@@ -1,0 +1,87 @@
+﻿@using Umbraco.Cms.Web.Common.PublishedModels;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<ContentModels.ArticlePage>
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+@inject IPublishedUrlProvider PublishedUrlProvider
+@using Umbraco.Cms.Core
+@using Umbraco.Cms.Core.Models.PublishedContent
+@using Umbraco.Cms.Core.Routing
+@using Umbraco.Extensions
+@using Umbraco.Cms.Core.Models
+@inject IPublishedValueFallback PublishedValueFallback
+@using Umbraco.Cms.Core.Services;
+@inject IUserService UserService;
+
+
+
+@{
+	Layout = "_Layout.cshtml";
+	var userService = UserService;
+}
+<main>
+    <div class="bg-custom-color text-white py-5 position-relative">
+        <img class="position-absolute bottom-0 start-0 w-100" src="~/Images/banner/background-lines-right.svg" alt="Lines Image">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <h1 class="center-headingblack">@Model.Value("title")</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-9">
+                <div class="metadata">
+                    <h2>@Model.Value("articleTitle")</h2>
+                    <div class="article-details">
+                        <span class="date">Date: @Model.CreateDate.ToString("MMM, dd, yy")</span>
+                        <span class="category">Category: @Model.Value("newsCategory")</span>
+                        <span class="author">Author: @Model.CreatorName(userService)</span>
+                    </div>
+                </div>
+                <article class="articlepage-news">
+                    <div class="article-content">
+                        @{
+                            var articlePageImage = Model.Value<MediaWithCrops>("newsImage");
+                            if (articlePageImage != null)
+                            {
+                                <img src="@articlePageImage.MediaUrl()" class="singel-image" alt="@Model.Value("title")" />
+                            }
+                        }
+                        <h5>@Model.Name</h5>
+                        <p class="article-context">
+                            @Model.Value("newsContent")
+                        </p>
+                    </div>
+                <div class="tags">
+                    
+                    <div class="badge-container">
+                        <ul>
+                            @foreach(var tag in Model.Value<IEnumerable<string>>("newsTags")){
+                                <span class="badge badge-primary">@tag</span>
+                            }
+                            
+                        </ul>
+                    </div>
+                </div>
+                </article>
+            </div>
+
+            <div class="col-md-3">
+                <aside class="search-aside">
+                    
+                    <div class="input-group search-box">
+                        <input type="text" class="form-control" placeholder="Search Article...">
+                        <div class="input-group-append">
+                            <button class="btn btn-custom" type="button">
+                                <i class="bi bi-search"></i> Search
+                            </button>
+                        </div>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </div>
+</main>
+

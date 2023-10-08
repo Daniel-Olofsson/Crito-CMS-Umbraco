@@ -1,0 +1,1060 @@
+/* General styles */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+
+}
+* {
+    box-sizing: border-box;
+}
+body {
+    display: flex;
+    flex-direction: column;
+    
+    
+}
+
+
+/* Footer styles */
+.footer-class {
+    padding: 10px;
+    margin-top: auto;
+    bottom: 0;
+    width: 100%;
+    background-color: #0E1021;
+    color: antiquewhite;
+    
+}
+
+/*Footer ends*/
+.navbar {
+    background-color: antiquewhite;
+    top: 0;
+    position: relative;
+    z-index: 1;
+}
+
+/* Custom styles for showcase section */
+/* Custom styles for showcase section */
+.showcase-section {
+    background-color: #F0EFE9;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    position: relative; /* Add this to create a stacking context */
+    z-index: 0; /* Set a lower z-index for the showcase section */
+}
+
+/* Custom styles for background lines */
+/* Custom styles for background lines */
+.bg-lines {
+    position: absolute;
+    top: 0;
+    left: -60%; /* Initially move the lines off the screen to the left */
+    right: 0;
+    width: 200%; /* Make it cover a wider area than the container */
+    height: 100%;
+    z-index: -1; /* Place it behind other content */
+}
+
+
+/* Custom styles for showcase text */
+.showcase-h1 {
+    font-size: 54px;
+    margin-top: 20px;
+}
+
+/* Custom styles for buttons */
+.showcase-buttons {
+    margin-top: 20px;
+}
+
+.custom-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    color: #fff;
+    background-color: #007bff;
+    border: 1px solid #007bff;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+    .custom-btn:hover {
+        background-color: #0056b3;
+    }
+
+/* Custom styles for showcase image */
+.custom-showcase-image {
+    max-width: 100%; /* Adjust the maximum width as needed */
+    min-width: 200px; /* Set a minimum width to prevent it from getting too small */
+    display: block;
+    margin: 20px auto;
+    height: auto;
+    position: relative; /* Add relative positioning */
+    z-index: 1; /* Ensure the image is in front of the background lines */
+}
+/* Navbar styles */
+
+.navbar {
+    background-color: #F0EFE9;
+}
+
+/* Navbar branding */
+.navbar-brand {
+    color: ghostwhite;
+    font-size: 24px;
+}
+
+/* Navbar links */
+.navbar-nav .nav-item .nav-link {
+    padding: 10px 20px;
+    font-size: 18px;
+    color: black;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+    /* Hover effect for non-active links */
+    .navbar-nav .nav-item .nav-link:hover {
+        color: #051340; /* Change the color on hover for non-active links */
+    }
+
+/* Active link styling with underline */
+.navbar-nav .nav-item.active .nav-link {
+    text-decoration: underline; /* Add underline to the active link */
+    color: #0B2B91; /* Change the color for the active link */
+}
+
+
+/*Service Feature /info section*/
+/* Service Feature /info section */
+
+
+.section-border {
+    margin: -50px -20px;
+    padding: 80px 80px;
+    border: 1px solid rbga(25,25,25,0.1);
+}
+.feature-boxes {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Two columns */
+    grid-gap: 20px; /* Adjust the gap between items */
+    /* Add any other styles for the container as needed */
+}
+/* Media query for smaller screens (e.g., phones) */
+@media (max-width: 768px) {
+    .feature-boxes {
+        grid-template-columns: repeat(1, 1fr); /* One column for smaller screens */
+        /* Add any other styles for the container on smaller screens */
+    }
+}
+.umb-block-list {
+    
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+
+}
+/* Style for the feature-button container */
+/* Add CSS styles for the feature-button container */
+.button-container {
+    display: flex;
+    justify-content: flex-start; /* Align items to the left */
+    align-items: center; /* Vertically center items */
+    margin-bottom: 20px; /* Add spacing from the feature-boxes */
+}
+
+/* Style for the button itself */
+.feature-button a {
+    display: inline-block;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    color: #000; /* Text color */
+    background-color: yellow; /* Button background color */
+    border: 1px solid yellow;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+    .feature-button a:hover {
+        background-color: #ffcc00; /* Change the background color on hover */
+    }
+/* Add CSS styles for the service-feature-section */
+.feature-section .container .section-border .feature-grid .section-title {
+    display: flex;
+    justify-content: center; /* Center the content horizontally */
+    background-color: #f0f0f0; /* Add a background color as needed */
+    padding: 20px; /* Add padding as needed */
+    text-align: center;
+}
+
+.section-title{
+    color:red;
+}
+/* Style for the section-border */
+/* Style for the feature-boxes container */
+.feature-boxes .container .section-border .feature-grid .feature-box .umb-block-list .section-title {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr); /* Two columns */
+    gap: 50px; /* Adjust the gap between items */
+}
+
+/* Style for individual feature-box items */
+.feature-boxes .container .section-border .feature-grid .feature-box .umb-block-list .section-title {
+    font-size: 25px;
+    margin-bottom: 20px;
+}
+
+/*Service Feature /info section*/
+/*Page h1*/
+
+/* Center the heading within the container */
+
+
+/* Style the heading */
+.center-heading {
+    text-align: center;
+    margin:10px 10px;
+    padding:10px 10px;
+}
+.center-headingblack {
+    text-align: center;
+    margin: 10px 10px;
+    padding: 10px 10px;
+    color: black;
+}
+.centered-h1 {
+    align-items: center;
+    justify-content:center; /* Center the text horizontally */
+    font-size: 32px; /* Adjust the font size to your preference */
+    color: #333; /* Set the text color */
+    margin-top: 20px; /* Add spacing from the top if needed */
+    position:relative;
+    z-index:3;
+    /* Add any other CSS styles you prefer */
+}
+.starting-h1 {
+    text-align: start; /* Center the text horizontally */
+    font-size: 42px; /* Adjust the font size to your preference */
+    color: #333; /* Set the text color */
+    margin-top: 20px; /* Add spacing from the top if needed */
+    position: relative;
+    z-index: 3;
+    margin-left: 15%; /* Add a left margin to align with the grid */
+    /* Add any other CSS styles you prefer */
+}
+
+
+/*Our Services section*/
+
+
+/* Styles for the services section */
+.services-section {
+    background-color: #F0EFE9; /* Set your desired background color */
+    padding: 40px 0; /* Adjust the padding as needed */
+    text-align: center; /* Center align the content */
+}
+.services-title{
+    position:absolute;
+    padding-bottom: 20px;
+    color:red;
+}
+.services-container {
+    max-width: 1200px; /* Adjust the maximum width as needed */
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.services-section-border {
+    padding: 20px;
+    background-color: #F0EFE9; /* Background color for the section */
+}
+
+/* Styles for the section titles */
+
+
+.main-title {
+    margin-right:66%;
+    font-size: 28px; /* Adjust the font size as needed */
+    margin-top: 40px; /* Adjust the margin as needed */
+    color: #333; /* Text color for the main title */
+    padding-bottom: 20px;
+
+}
+
+/* Styles for the entire .umb-block-list container */
+.services-section .umb-block-list {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* Create 4 columns */
+    gap: 20px; /* Adjust the gap between cards */
+    margin-top: 20px; /* Adjust the margin as needed */
+}
+/* Media query for mobile devices */
+@media (max-width: 767px) {
+    .services-section .umb-block-list {
+        grid-template-columns: repeat(1, 1fr); /* Change to 1 column on mobile */
+    }
+}
+
+    /* Styles for the common services-box inside .umb-block-list */
+    .services-section .umb-block-list .services-box {
+        border: 1px solid #ddd; /* Border around the card */
+        padding: 20px;
+        border-radius: 10px; /* Rounded corners for the card */
+        background-color: white; /* Background color for the card */
+        text-align: center; /* Center the content inside the card */
+        color:black;
+    }
+
+    /* Styles for specific elements inside .umb-block-list */
+    .services-section .umb-block-list .specific-element {
+        /* Your specific styles for these elements */
+    }
+
+/* Styles for the button container */
+.services-button-container {
+    text-align: center;
+    margin-top: 20px; /* Adjust the margin as needed */
+}
+/* Styles for the our-services-button */
+
+.our-services-button {
+    display: inline-block;
+    padding: 10px 30px; /* Adjust the padding as needed */
+    border-radius: 50px; /* Create a round/oval shape for the button */
+    background-color: #000; /* Button background color (black) */
+    
+    
+    font-weight: bold;
+    text-align: center;
+}
+
+    /* Remove underline on hover */
+    .our-services-button:hover {
+        text-decoration: none;
+    }
+.our-services-link {
+    color: #fff; /* Text color (white) for the button text */
+    text-decoration: none;
+}
+/* Hover effect for the button (optional) */
+.our-services-button:hover {
+    background-color: #333; /* Change background color on hover */
+}
+/* Styles for the our-services-button */
+/* Styles for the button */
+.services-button {
+    display: inline-block;
+    padding: 10px 30px; /* Adjust the padding as needed */
+    border-radius: 50px; /* Create a round/oval shape for the button */
+    background-color: #333; /* Button background color */
+    text-align: center;
+    margin: 20px auto; /* Center the button horizontally */
+    position: relative; /* Add relative positioning to the button */
+}
+
+    .services-button a {
+        display: block;
+        color: #fff; /* Text color for the button text */
+        text-decoration: none; /* Remove text decoration (underline) */
+        font-weight: bold;
+    }
+
+    /* Oval circle styles */
+    .services-button::before {
+        content: ''; /* Create a pseudo-element */
+        position: absolute; /* Position the oval circle */
+        top: 50%; /* Center vertically */
+        left: 50%; /* Center horizontally */
+        transform: translate(-50%, -50%); /* Center the circle within the button */
+        width: 30px; /* Adjust the width of the oval */
+        height: 20px; /* Adjust the height of the oval */
+        background-color: transparent; /* Transparent background for the oval */
+        border: 2px solid #fff; /* Border for the oval */
+        border-radius: 50%; /* Create an oval shape */
+        z-index: -1; /* Move the oval circle behind the arrow */
+    }
+
+    /* Hover effect for the button (optional) */
+    .services-button:hover {
+        background-color: #555; /* Change background color on hover */
+    }
+
+/* Styles for the arrow icon */
+.arrow-icon {
+    font-size: 24px; /* Adjust the font size as needed */
+    color: #fff; /* Text color for the arrow */
+    display: inline-block;
+    vertical-align: middle;
+}
+/*Our Services section*/
+
+
+
+/* Styles for the About Company section */
+/* Styles for the About Company section */
+.about-company-section {
+    padding: 40px 0;
+    background-color: #f7f7f7; /* Set your desired background color */
+}
+
+.container-about-company {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    position: relative; /* Add relative positioning to the container */
+}
+
+.about-content {
+    display: flex;
+    flex-wrap: wrap; /* Allow elements to wrap on smaller screens */
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+/* Styles for the image on the left */
+.image-container-about {
+    flex: 1;
+    position: relative;
+}
+
+.image-about {
+    max-width: 100%;
+    height: auto; /* Allow the image to scale proportionally */
+    display: block;
+}
+
+/* Styles for the text on the right */
+.text-container-about {
+    flex: 1;
+    text-align: left;
+    padding: 20px 20px;
+}
+
+.section-title-about {
+    font-size: 18px;
+    font-weight: bold;
+    color: red;
+}
+
+.main-title-about {
+    font-size: 58px;
+    margin-top: 10px;
+    color: #333;
+}
+
+.description-about {
+    font-size: 26px;
+    color: #555;
+}
+
+/* Styles for the quote box */
+.quote {
+    position: absolute;
+    top: 0;
+    right: auto;
+    background-color: #BEEBFF; /* Set your desired background color */
+    color: black; /* Text color for the quote */
+    padding: 20px 20px; /* Adjust padding as needed */
+    border-bottom-left-radius: 10px; /* Rounded corners for the bottom-left */
+    transform: translateY(12cm); /* Move the quote box up by 1 cm */
+    z-index: 1;
+}
+
+/* Media query for smaller mobile screens */
+@media (max-width: 480px) {
+    .quote {
+        width: 80%; /* Adjust the width for smaller mobile screens */
+        transform: translateY(17cm); /* Move the quote box up by 1 cm on smaller mobile screens */
+        padding: 15px 15px; /* Adjust padding as needed */
+    }
+}
+/**/
+
+/*why us*/
+/* Style for the icon */
+
+/* Style to stack boxes in one column */
+.why-us-content {
+    display: grid;
+    grid-template-columns: 1fr 3fr; /* Two equal columns */
+    grid-column-gap: 20px; /* Adjust the gap between columns */
+    align-items: center; /* Vertically center content */
+    padding: 10px 10px;
+    
+}
+.why-us-boxes .umb-block-list {
+    flex: 1; /* Allow boxes to grow to take available space */
+    display: flex;
+    flex-direction: column; /* Display boxes in a column */
+    justify-content: space-between;
+    align-items: center; /* Vertically center content */
+    width: 100%;
+    
+}
+
+/* Optional: Add spacing between stacked boxes */
+.why-us-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    position: relative; /* Add relative positioning to the container */
+}
+.why-us-box {
+    margin-bottom: 20px; /* Adjust the margin as needed */
+    
+}
+.why-us-icon {
+    max-width: 25px; /* Set a maximum width for the icon */
+    max-height: 25px; /* Set a maximum height for the icon */
+}
+
+/* Style for the small title */
+.why-us-smalltitle {
+    font-size: 16px; /* Adjust font size as needed */
+    margin: 0; /* Remove default margin */
+    color: red; /* Adjust text color */
+}
+
+/* Style for the main title */
+.why-us-maintitle {
+    font-size: 35px; /* Adjust font size as needed */
+    margin: 0; /* Remove default margin */
+    color: black; /* Adjust text color */
+    max-width: 30%; /* Set a maximum width for the element */
+    
+    
+    
+}
+.why-us-title {
+    font-size: 14px; /* Adjust font size as needed */
+    margin: 0; /* Remove default margin */
+    color: black; /* Adjust text color */
+}
+
+/* Style for the main title */
+.why-us-description {
+    font-size: 10px; /* Adjust font size as needed */
+    margin: 0; /* Remove default margin */
+    color: #777; /* Adjust text color */
+    width: 100%;
+}
+.why-us-image {
+    max-width: 100%; /* Ensure the image doesn't exceed its container */
+    height: auto; /* Maintain aspect ratio */
+    /* Add any other styles you want for the image */
+}
+/*why us*/
+
+/*Contact us page*/
+
+.contact-map {
+    width: 100%;
+    max-width: 100%;
+}
+
+.google-maps {
+    width: 100%;
+    height: 450px; /* Adjust the height as needed */
+    border: 0;
+}
+.contactform-section {
+    text-align: center;
+    padding: 50px 0;
+}
+
+.contact-form-box {
+    width: 100%; /* Adjust the width of the form container */
+    margin: 0 auto; /* Center the form container horizontally */
+    background-color: #F0EFE9;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.form-label {
+    font-weight: bold;
+}
+.form-control {
+    min-width: 100%;; /* Set a minimum width for the form inputs */
+    width: 100%; /* Ensure all form inputs take up the full width of the container */
+    margin-bottom: 10px; /* Add spacing between inputs */
+}
+.form {
+    max-width: 100%;
+}
+
+/* Apply styles to the button */
+.contact-form-box .btn {
+    width: 100%;
+    background-color: #EDCF87; /* Change the background color to yellow */
+    color: black; /* Set text color to white */
+}
+.circle-card {
+    width: 200px; /* Adjust the width and height as needed */
+    height: 200px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 0 auto; /* Center horizontally */
+}
+.contact-us-section{
+    margin:10px;
+    padding:10px;
+}
+/*Contact us page*/
+/*ARticles page LIST*/
+.article {
+    text-decoration: none; /* Remove underline from the link */
+    display: block; /* Make the entire card a block-level element */
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin: 10px;
+    text-align: center;
+    color: #333; /* Set text color */
+    background-color: #fff; /* Set background color */
+}
+
+/* Style the content within the article */
+.article-wrapper {
+    padding: 10px;
+    position:relative;
+}
+
+.article-date {
+    position: absolute;
+    font-size: 16px;
+    color: black;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(255, 255, 0, 0.5); /* Transparent yellow background */
+
+    padding: 5px 10px; /* Adjust padding as needed */
+    border-radius: 5px; /* Add rounded corners */
+    z-index: 1; /* Place it in front of other content */
+}
+
+/* Create a container for the articles */
+.article-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+.article-image {
+    width: 100%; /* Adjust this value to control the maximum width of the images */
+    height: 200px; /* This maintains the aspect ratio */
+    border: 1px solid #ddd; /* Add a border for separation (optional) */
+    border-radius: 5px; /* Add rounded corners (optional) */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add a subtle shadow (optional) */
+    margin-bottom: 10px; /* Add spacing between images (adjust as needed) */
+}
+/*Articles page LIST*/
+
+
+/*Article page*/
+/* Article page */
+
+/* Style the articlepage-article */
+/* Style the articlepage-article */
+.articlepage-news {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    
+    max-width: 600px; /* Increase the max-width for the article container */
+    margin: 0 auto;
+    
+}
+
+/* Style the metadata h2 */
+.metadata h2 {
+    font-size: 24px;
+    margin: 0;
+    margin-bottom: 10px;
+}
+
+/* Style the article-details */
+.article-details {
+    font-size: 14px;
+}
+
+/* Style the date, category, and author */
+.date,
+.category,
+.author {
+    margin-right: 10px;
+}
+
+/* Style the article-image */
+.singel-image {
+    max-width: 100%;
+    height: 500px;
+    width: 100%;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 10px;
+}
+
+/* Style the article context */
+.article-context {
+    font-size: 16px;
+    line-height: 1.5;
+    color: #333;
+    margin-top: 10px;
+    text-align: left; /* Align the text to the left */
+}
+
+/* Style the tags */
+.tags {
+    margin-top: 20px;
+    text-align: left; /* Align the tags to the left */
+}
+
+/* Style the badge container */
+.badge-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/* Style the individual tags */
+.badge {
+    color: black;
+    font-size: 12px;
+    padding: 15px;
+    margin-right: 5px;
+    margin-bottom: 5px;
+    background-color: grey;
+    border-radius: 25px;
+}
+
+/* Style the search-aside */
+.search-aside {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    margin: 10px;
+    max-width: 300px; /* Adjust the max-width for the search aside */
+    margin-left: auto; /* Push it to the right */
+    margin-top: 0; /* Remove top margin */
+}
+
+/* Style the search-box within the aside */
+.search-box {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+}
+
+/* Style the custom button */
+.btn-custom {
+    height: 45px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+    /* Style the search icon within the button */
+    .btn-custom i {
+        margin-right: 5px;
+    }
+
+/* Style the input field */
+input[type="text"] {
+    width: auto; /* Remove width to prevent stretching */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+}
+
+
+/*project case stuides*/
+.container-projects {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.red-center{
+    color:red;
+    text-align:center;
+}
+/* Define a grid layout for project-blocklist */
+/* CSS for the project-blocklist */
+.project-blocklist
+{
+    padding:20px 20px;
+    text-align: center; /* Center the content horizontally */
+}
+
+    /* CSS for the umb-block-list */
+    .project-blocklist .umb-block-list {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr); /* Two columns */
+        gap: 20px; /* Gap between grid items */
+        justify-content: center; /* Center the grid items horizontally within the project-blocklist */
+    }
+
+    /* CSS for the project-box elements inside umb-block-list */
+    .project-blocklist .project-box {
+        max-width: 600px; /* Set the maximum width for the content */
+        margin: 0 auto; /* Center the content horizontally within its container */
+        padding: 20px; /* Add padding for spacing */
+        
+        
+        border-radius: 5px; /* Optional border radius */
+        text-align: left; /* Reset text alignment for block items */
+    }
+
+    /* CSS for the block-item elements */
+    .project-blocklist .block-item {
+        margin-bottom: 20px; /* Add spacing between block items */
+    }
+
+        /* Optional styling for h4 and anchor elements inside block-item */
+        .project-blocklist .block-item h4 {
+            font-size: 1.2rem;
+            margin: 10px 0;
+        }
+
+        .project-blocklist .block-item a {
+            text-decoration: none;
+            color: #007bff;
+        }
+
+            .project-blocklist .block-item a:hover {
+                text-decoration: underline;
+                color: #0056b3;
+            }
+
+.block-text {
+    display: flex; /* Use flexbox for layout */
+    justify-content: space-between; /* Space between items (arrow on the right, text on the left) */
+    align-items: center; /* Vertically center items */
+    margin-top: 10px; /* Add spacing between image and text */
+}
+
+    /* CSS for the arrow icon */
+    .block-text .arrow{
+        font-size: 32px; /* Increase the arrow icon size */
+    }
+
+    /* Reset text alignment for h4 */
+    .block-text h4 {
+        margin: 0; /* Remove default margin */
+        font-size: 1.2rem;
+    }
+
+.line {
+    flex-grow: 1;
+    border-bottom: 2px solid #ddd; /* Add a horizontal line at the bottom */
+    width: 100%; /* Make the line span the full width of the card */
+    margin: 10px 0; /* Adjust margin as needed for spacing */
+}
+
+/* CSS for the images */
+.projectblock-image {
+  
+}
+/*project case stuides*/
+
+/*Team section*/
+.team-section {
+    background-color: #EDCF87;
+    padding: 40px 0; /* Adjust padding as needed */
+}
+
+.team-text {
+    text-align: center;
+    
+}
+.team-smalltitle {
+        text-align: center;
+        color:red;
+    }
+.team-container {
+    display: flex;
+    justify-content: space-between; /* Add space between items */
+    align-items: center;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+    .team-container h2 {
+        margin-bottom: 10px;
+        flex-grow: 1; /* Allow h2 to grow and center */
+        text-align: center; /* Center the h2 text */
+    }
+
+    .team-container a {
+        color: #007bff;
+        text-decoration: none;
+    }
+
+a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+    a:hover {
+        text-decoration: underline;
+    }
+
+.testimonial {
+    background-color: white;
+    padding: 40px 0;
+    text-align: center;
+    margin: 0 auto; /* Center the testimonial horizontally */
+    max-width: 50%; /* Set the maximum width to 50% */
+}
+
+    .testimonial h3 {
+        margin-bottom: 10px;
+    }
+/* Set up three columns for testimonials */
+.testimonial-row {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.testimonial-item {
+    flex-basis: calc(33.33% - 20px); /* Adjust the width as needed */
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    text-align: center;
+}
+
+    .testimonial-item p {
+        margin: 0;
+    }
+/* Style the umb-block-list within the team-container class */
+.team-container .umb-block-list {
+    /* Add styles for the block list container */
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; /* Adjust the gap between items as needed */
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #f0f0f0;
+    border: 1px solid #ddd;
+    
+    justify-content: center; /* Center horizontally */
+}
+
+    /* Style the block items within the team-container class */
+    .team-container .umb-block-list .block-item {
+        /* Add styles for each block item */
+        background-color: #fff;
+        border: 1px solid #ccc;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        flex-basis: calc(25% - 40px); /* Adjust the width and gap as needed */
+        padding: 20px; /* Adjust the padding as needed */
+    }
+
+        /* Style the card content */
+        .team-container .umb-block-list .block-item .card-body {
+            padding: 10px;
+        }
+
+        /* Style the card title */
+        .team-container .umb-block-list .block-item .card-title {
+            margin: 0;
+        }
+
+
+/* CSS for the profile-cards container */
+.team-member {
+    
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    color: #333; /* Adjust color as needed */
+    /* You can add more styles as per your design requirements */
+}
+/*Team section end*/
+
+
+
+/*Partial news*/
+/* Custom CSS for equal-height items */
+.custom-container {
+    display: flex;
+    flex-wrap: wrap;
+    margin: -15px; /* Negative margin to counteract padding */
+}
+
+.custom-column {
+    flex: 1;
+    padding: 15px; /* Padding to create spacing between columns */
+    box-sizing: border-box;
+}
+
+.custom-card {
+    border: 1px solid #ccc;
+    padding: 15px;
+}
+
+    .custom-card img {
+        max-width: 100%; /* Ensure images fit within the card */
+        height: auto;
+    }
+    /* partial news and articel ends*/
+
+
+    /*sub partial*/
+.subscription-form{
+    width:1000px;
+}
+.subscription-section {
+    background-color: #F0EFE9;
+    min-height: 300px; /* Increase the minimum height as needed */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/*sub partial*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*Custom colors*/
+.bg-custom-color {
+    background-color: #F0EFE9 !important;
+}
+/*Custom colors*/

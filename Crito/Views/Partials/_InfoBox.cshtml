@@ -1,0 +1,77 @@
+﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+
+
+<!-- Razor code for your view goes here -->
+
+@using Umbraco.Cms.Core.Models
+
+<section class="info-section">
+    <div class="row align-items-center">
+        <div class="col-md-6 text-center">
+            <h4>Our Accounting is trusted by thousand of companies</h4>
+            <a href="/service" class="btn btn-warning btn-lg">Learn More</a>
+            
+        </div>
+        <div class="col-md-6">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="info-box">
+                        
+
+                        
+
+                        @{
+                            var svgOne = Model.Value<MediaWithCrops>("learnMoreSvgFirst");
+                            if (svgOne != null)
+                            {
+                                <img src="@svgOne.MediaUrl()" class="custom-showcase-image" alt="" />
+                            }
+                        }   
+                        
+                        <h2>Business Advice</h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="info-box">
+                        @{
+                            var svgTwo = Model.Value<MediaWithCrops>("learnMoreSvgSecond");
+                            if (svgTwo != null)
+                            {
+                                <img src="@svgTwo.MediaUrl()" class="custom-showcase-image" alt="@Model.Value("showcaseTitle")" />
+                            }
+                        }   
+                        <h2>Startup Business</h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="info-box">
+                        @{
+                            var svgThird = Model.Value<MediaWithCrops>("learnMoreSvgThird");
+                            if (svgThird != null)
+                            {
+                                <img src="@svgThird.MediaUrl()" class="custom-showcase-image" alt="@Model.Value("showcaseTitle")" />
+                            }
+                        }   
+                        <h2>Financial Services</h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="info-box">
+                        @{
+                            var svgFourth = Model.Value<MediaWithCrops>("learnMoreSvgFourth");
+                            if (svgFourth != null)
+                            {
+                                <img src="@svgFourth.MediaUrl()" class="custom-showcase-image" alt="@Model.Value("showcaseTitle")" />
+                            }
+                        }   
+                        <h2>Consulting</h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,36 @@
+﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+@using Crito.Models;
+@{
+    var subModel = new SubscribeModel();
+}
+
+
+<section class="subscription-section">
+    <!-- Centered Subscription Form only work with https://mailtrap.io -->
+    <div class="d-flex justify-content-center align-items-center">
+        <div class="subscription-form p-4 rounded shadow">
+            
+                <div class="row">
+                    <div class="col-md-4">
+                        <h4 class="mb-3">Subscribe to Our Newsletter</h5>
+                    </div>
+                    <div class="col-md-5">
+                        @using (Html.BeginUmbracoForm("Subscribe", "Contact", FormMethod.Post))
+                        {
+                            <div asp-validation-summary="ModelOnly"></div>
+                            <div class="input-group mb-3">
+                                <input asp-for="@subModel.Email" type="email" class="form-control" id="email" name="email" placeholder="Email*" required>
+                                <div class="input-group-append">
+                                    <button type="submit" class="btn btn-outline-primary">Submit</button>
+                                </div>
+                            </div>
+                            
+                        }
+                    </div>
+                </div>
+            
+        </div>
+    </div>
+</section>
+
+

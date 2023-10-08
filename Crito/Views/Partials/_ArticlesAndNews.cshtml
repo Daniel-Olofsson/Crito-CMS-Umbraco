@@ -1,0 +1,60 @@
+﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+@using Umbraco.Cms.Core.Models
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+@{
+    var maxItemsPage = 3;
+	var currentPage = 1;
+	
+    
+    var articlePages = Umbraco?.Content(Guid.Parse("2065786d-07de-4ca6-b1fd-f490fe43fe8d"))?
+        .ChildrenOfType("articlePage")?
+        .Where(x => x.IsVisible())
+        .OrderByDescending(x => x.CreateDate).ToList();
+        
+    var totalItemsPage = articlePages?.Count ?? 0;
+    var pagedItems = articlePages?.Skip((currentPage -1) * maxItemsPage).Take(maxItemsPage);
+}
+
+
+<main>
+    <section>
+        <div class="container">
+            <div class="row">
+                @if(pagedItems != null)
+                {
+                    @foreach (var item in pagedItems!)
+                	{
+                	    var url = item.Url();
+                	    var date = item.CreateDate;
+                	    var image = item.Value<IPublishedContent>("newsImage");
+                	    var categories = item.Value("newsCategory");
+                	    var name = @item.Name();
+                	    var preamble = item.Value("newsPreamble");
+                	
+                	    <div class="col-md-4 equal-height-article"> <!-- Use col-md-4 for three columns on medium screens and above -->
+                            <a href="@url" class="article">
+                                <div class="article-wrapper">
+                                    <div class="article-date">
+                                        <div class="day">@date.ToString("dd")</div>
+                                        <div class="month">@date.ToString("MMM")</div>
+                                    </div>
+                                    <img src="@image?.Url()" alt="" class="article-image img-fluid"> <!-- Use img-fluid for responsive images -->
+                                    <p class="article-category">@categories</p>
+                                    <h5>@name</h5>
+                                    <p class="card-text small">@preamble</p>
+                                </div>
+                            </a>
+                        </div>
+                		
+                	}
+                }
+            </div>
+        </div>
+        
+        
+        
+
+
+        
+    </section>
+</main>

@@ -1,0 +1,75 @@
+﻿@using Umbraco.Cms.Web.Common.PublishedModels;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<ContentModels.ServicePage>
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+@inject IPublishedUrlProvider PublishedUrlProvider
+
+@using Umbraco.Cms.Core
+@using Umbraco.Cms.Core.Models.PublishedContent
+@using Umbraco.Cms.Core.Routing
+@using Umbraco.Extensions
+@using Umbraco.Cms.Core.Models
+@inject IPublishedValueFallback PublishedValueFallback
+
+@{
+    Layout = "_Layout.cshtml";
+}
+
+<main>
+<div class="bg-custom-color text-white py-5 position-relative">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <h1 class="center-headingblack">@Model.Value("title")</h1>
+            </div>
+        </div>
+    </div>
+    <img class="position-absolute bottom-0 start-0 w-100" src="~/Images/banner/background-lines-right.svg" alt="Lines Image">
+</div>
+<main class="container my-5">
+        <div class="row">
+            <!-- Service 1 -->
+            <div class="col-md-4">
+                <div class="card mb-4 h-100">
+                    <div class="card-body">
+                        <!-- Use Bootstrap icons for service images -->
+                        <span class="iconify" data-icon="bi:lightbulb" data-inline="false"></span>
+                        <h2 class="card-title">Strategy Consulting</h2>
+                        <p class="card-text">We offer expert strategy consulting services to help your business achieve its goals. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Service 2 -->
+            <div class="col-md-4">
+                <div class="card mb-4 h-100">
+                    <div class="card-body">
+                        <!-- Use Bootstrap icons for service images -->
+                        <span class="iconify" data-icon="bi:wallet" data-inline="false"></span>
+                        <h2 class="card-title">Financial Advisory</h2>
+                        <p class="card-text">Our financial advisory services provide valuable insights and recommendations for financial growth. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Service 3 -->
+            <div class="col-md-4">
+                <div class="card mb-4 h-100">
+                    <div class="card-body">
+                        <!-- Use Bootstrap icons for service images -->
+                        <span class="iconify" data-icon="bi:graph-up" data-inline="false"></span>
+                        <h2 class="card-title">Market Research</h2>
+                        <p class="card-text">We conduct in-depth market research to help you understand your target audience and make informed decisions. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Big Button for Consulting -->
+        <div class="text-center my-4">
+            <a href="/service/consulting" class="btn btn-primary btn-lg">Learn More About Consulting</a>
+        </div>
+</main>
+
+
+
+

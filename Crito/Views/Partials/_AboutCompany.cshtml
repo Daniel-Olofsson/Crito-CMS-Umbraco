@@ -1,0 +1,27 @@
+﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+@using Umbraco.Cms.Core.Models
+<section class="about-company-section">
+    <div class="container-about-company">
+        <div class="about-content">
+            <div class="image-container-about">
+                @{
+                        var showcaseImage = Model.Value<MediaWithCrops>("aboutCompanyImage");
+                        if (showcaseImage != null)
+                        {
+                            <img src="@showcaseImage.MediaUrl()" class="image-about" alt="@Model.Value("aboutCompanySmallTitle")" />
+                        }
+                    }
+            </div>
+            
+            <div class="text-container-about">
+                <h2 class="section-title-about">@Model.Value("aboutCompanySmallTitle")</h2>
+                <h1 class="main-title-about">@Model.Value("aboutCompanyMainTitle")</h1>
+                <div class="description-about">@Model.Value("aboutCompanyDescription")</div>
+                
+            </div>
+        </div>
+        <div class="quote">
+            <p>Here is a quote about our company...</p>
+        </div>
+    </div>
+</section>

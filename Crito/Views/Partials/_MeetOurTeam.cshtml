@@ -1,0 +1,56 @@
+﻿@using Umbraco.Cms.Web.Common.PublishedModels;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<ContentModels.HomePage>
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+@using Umbraco.Cms.Core.Models
+
+
+<section class="team-section">
+    <div class="container">
+        <div class="team-text">
+            <h5 class="team-smalltitle">@Model.Value("teamSmallTitle")</h5>
+            <div class="team-container">
+                <h2>@Model.Value("teamMainTitle")</h2>
+                <a class="btn btn-dark" href="@Model.Value("teamButtonUrl")">@Model.Value("teamButtonText")</a>
+            </div>
+        </div>
+        
+        
+        
+            
+        <div class="team-container">
+            <div class="container">
+                <div class="row justify-content-center align-items-center">
+                    @Html.GetBlockListHtml(Model.TeamBlockList)
+                </div
+            </div
+        
+                
+                
+            
+        </div>
+        
+        
+        
+    
+    @*Block list needed but no time/ *@
+
+    <div class="testimonial">
+        <div class="container">
+            <h3>What Our Clients Say</h3>
+            <div class="testimonial-row">
+                <div class="testimonial-item">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                </div>
+                <div class="testimonial-item">
+                    <p>Nullam sit amet urna vel justo pretium placerat.</p>
+                </div>
+                <div class="testimonial-item">
+                    <p>Duis vestibulum, erat ac blandit feugiat.</p>
+                </div>
+            </div>
+            <button class="btn btn-primary">
+                All reviews
+            </button>
+        </div>
+    </div>
+</section>

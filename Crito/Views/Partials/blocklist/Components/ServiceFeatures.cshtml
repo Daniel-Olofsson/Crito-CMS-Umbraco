@@ -1,0 +1,63 @@
+﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<Umbraco.Cms.Core.Models.Blocks.BlockListItem>;
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+@{
+    var content = (ContentModels.ServiceFeatures)Model.Content;
+}
+
+@*<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            @*<div class="info-box">
+            @{
+                // The Umbraco Helper has a Media method that will retrieve a Media Item by Guid in the form of IPublishedContent. In this example, the Media Item has a Guid of 55240594-b265-4fc2-b1c1-feffc5cf9571
+                var mediaItem = Umbraco.Media(Guid.Parse(@content.Value("ServiceFeaturesBlockIconId").ToString()));
+        
+                if (mediaItem != null)
+                {
+                    // To get the URL for your media item, you use the Url method:
+                    var url = mediaItem.Url();
+                    // to read a property by alias
+                    var imageHeight = mediaItem.Value<int>("umbracoHeight");
+                    var imageWidth = mediaItem.Value<int>("umbracoWidth");
+                    var orientationCssClass = imageWidth > imageHeight ? "img-landscape" : "img-portrait";
+        
+                    <img src="@url" alt="@mediaItem.Name" class="@orientationCssClass" />
+                }
+            }
+            
+            <h2>@content.Value("ServiceFeaturesBlockTitle")</h2>
+            <p>@content.Value("ServiceFeaturesBlockDescription")</p>
+            </div>*@
+@*        </div>
+    </div>
+</div>
+<div class="blocklist-wrapper">
+    
+    <div class="grid-container">
+        <div class="custom-column">
+            
+        </div>
+    </div>
+</div>*@
+<div class="feature-box">
+
+    @{
+        // The Umbraco Helper has a Media method that will retrieve a Media Item by Guid in the form of IPublishedContent. In this example, the Media Item has a Guid of 55240594-b265-4fc2-b1c1-feffc5cf9571
+        var mediaItem = Umbraco.Media(Guid.Parse(@content.Value("ServiceFeaturesBlockIconId").ToString()));
+
+        if (mediaItem != null)
+        {
+            // To get the URL for your media item, you use the Url method:
+            var url = mediaItem.Url();
+            // to read a property by alias
+            var imageHeight = mediaItem.Value<int>("umbracoHeight");
+            var imageWidth = mediaItem.Value<int>("umbracoWidth");
+            var orientationCssClass = imageWidth > imageHeight ? "img-landscape" : "img-portrait";
+
+            <img src="@url" alt="@mediaItem.Name" class="@orientationCssClass" />
+        }
+    }
+
+    <h2>@content.Value("ServiceFeaturesBlockTitle")</h2>
+    <p>@content.Value("ServiceFeaturesBlockDescription")</p>
+</div>

@@ -1,0 +1,114 @@
+﻿@using Umbraco.Cms.Web.Common.PublishedModels;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<ContentModels.ArticleList>
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+@using Umbraco.Cms.Core.Models.PublishedContent;
+
+@{
+	Layout = "_Layout.cshtml";
+	
+	var maxItemsPage = 9;
+	var currentPage = 1;
+	
+	
+	if(!int.TryParse(Context.Request.Query["page"], out currentPage)){
+	    currentPage = 1;
+	}
+	
+	var selection = Umbraco?.Content(Guid.Parse("2065786d-07de-4ca6-b1fd-f490fe43fe8d"))?
+        .ChildrenOfType("articlePage")?
+        .Where(x => x.IsVisible())
+        .OrderByDescending(x => x.CreateDate).ToList();
+    
+     
+    var totalItemsPage = selection?.Count ?? 0;
+    var pagedItems = selection?.Skip((currentPage -1) * maxItemsPage).Take(maxItemsPage);
+	
+}
+<header>
+    
+</header>
+<main>
+<div class="bg-custom-color text-white py-5 position-relative">
+    <img class="position-absolute bottom-0 start-0 w-100" src="~/Images/banner/background-lines-right.svg" alt="Lines Image">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <h1 class="center-headingblack">@Model.Value("title")</h1>
+            </div>
+        </div>
+    </div>
+    
+</div>
+
+    
+    <div class="news-wrapper">
+        
+            
+        
+        <h2 class="starting-h1">@Model.Value("articleListTitle")</h2>
+        <div class="text-center">
+            <h2 class="centered-h1">Page @currentPage</h2>
+        </div>
+        <h2 class="centered-h1"></h2>
+     <div class="article-container">
+    
+        @if(pagedItems != null)
+        {
+            @foreach (var item in pagedItems!)
+        	{
+        	    var url = item.Url();
+        	    var date = item.CreateDate;
+        	    var image = item.Value<IPublishedContent>("newsImage");
+        	    var categories = item.Value("newsCategory");
+        	    var name = @item.Name();
+        	    var preamble = item.Value("newsPreamble");
+        	
+        	    <a href="@url" class="article">
+                    <div class="article-wrapper">
+                        <div class="article-date">
+                            <div class="day">@date.ToString("dd")</div>
+                            <div class="month">@date.ToString("MMM")</div>
+                        </div>
+                        <img src="@image?.Url()" alt="" class="article-image"/>
+                        <p class="article-category">@categories</p>
+                        <h5>@name</h5>
+                        <p>@preamble</p>
+                    </div>
+                </a>
+        		
+        	}
+        }
+        
+        </div>   
+    </div>
+    
+    <!-- Pagination buttons -->
+    <nav aria-label="Page navigation">
+        <ul class="pagination justify-content-center">
+        @if(currentPage > 1){
+            <li class="page-item">
+                <a class="page-link" href="?page=@(currentPage -1)" aria-label="Previous">
+                    <span aria-hidden="true">&laquo;</span>
+                </a>
+            </li>
+        }
+        
+            
+            @if(currentPage >= 2){<li class="page-item"><a class="page-link" href="?page=@(currentPage -1)">@(currentPage -1)</a></li>}
+            <li class="page-item"><a class="page-link" href="?page=@currentPage">@currentPage</a></li>
+            @if(currentPage < Math.Ceiling((decimal)totalItemsPage/ maxItemsPage )){
+            
+            <li class="page-item"><a class="page-link" href="?page=@(currentPage +1)">@(currentPage +1)</a></li>}
+            
+            @if(currentPage < Math.Ceiling((decimal)totalItemsPage/ maxItemsPage ))
+            {
+                <li class="page-item">
+                    <a class="page-link" href="?page=@(currentPage +1)" aria-label="Next">
+                        <span aria-hidden="true">&raquo;</span>
+                    </a>
+                </li>
+            }
+        </ul>
+    </nav>
+    
+</main>

@@ -1,0 +1,33 @@
+﻿@using Umbraco.Cms.Web.Common.PublishedModels;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<ContentModels.HomePage>
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+@using Umbraco.Cms.Core.Models
+
+<section class="why-us-section">
+        <div class="why-us-container">
+            <div class="section-border">
+                <p class="why-us-smalltitle">@Model.Value("whyUsSmallTitle")</p>
+                <h2 class="why-us-maintitle">@Model.Value("whyUsMainTitle")</h2>
+                
+                <div class="feature-grid">
+                    
+                    
+                </div>
+                <div class="why-us-content">
+                    <div class="why-us-boxes">
+                        @Html.GetBlockListHtml(Model.WhyChooseUs)
+                    </div>
+    
+                    <div class="why-us-imagewrapper">
+                        @{
+                            var showcaseImage = Model.Value<MediaWithCrops>("whyUsImage");
+                            if (showcaseImage != null)
+                            {
+                                <img src="@showcaseImage.MediaUrl()" class="why-us-image" alt="@Model.Value("whyUsSmallTitle")" />
+                            }
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>

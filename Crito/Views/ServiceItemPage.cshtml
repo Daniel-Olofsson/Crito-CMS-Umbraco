@@ -1,0 +1,46 @@
+﻿@using Umbraco.Cms.Web.Common.PublishedModels;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<ContentModels.ServiceItemPage>
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+@inject IPublishedUrlProvider PublishedUrlProvider
+@using Umbraco.Cms.Core
+@using Umbraco.Cms.Core.Models.PublishedContent
+@using Umbraco.Cms.Core.Routing
+@using Umbraco.Extensions
+@using Umbraco.Cms.Core.Models
+@inject IPublishedValueFallback PublishedValueFallback
+@{
+	Layout = "_Layout.cshtml";
+}
+<main>
+<div class="bg-custom-color text-white py-5 position-relative">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <h1 class="center-headingblack">@Model.Value("title")</h1>
+            </div>
+        </div>
+    </div>
+    <img class="position-absolute bottom-0 start-0 w-100" src="~/Images/banner/background-lines-right.svg" alt="Lines Image">
+</div>
+    
+    <section class="get-consulting">
+        <div class="container">
+            
+            <div class="row mt-3">
+                <div class="col-md-6">
+                    <h2>Get consulting now!</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam consectetur justo ut augue volutpat, vel dapibus lectus tempus. Suspendisse potenti. Sed consectetur mi ut metus dignissim, eget fermentum metus aliquet.</p>
+                </div>
+                <div class="col-md-6">
+                    <h2>Services</h2>
+                    <ul>
+                        <li>Service 1</li>
+                        <li>Service 2</li>
+                        <li>Service 3</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+

@@ -1,0 +1,20 @@
+﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<Umbraco.Cms.Core.Models.Blocks.BlockListItem>;
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+@{
+    var content = (ContentModels.OurServices)Model.Content;
+}
+<div class="services-box">
+
+    
+
+    <h4>@content.Value("OurServicesBlockTitle")</h4>
+    <div class="line"></div>
+    <p>@content.Value("OurServicesBlockDescription")</p>
+    <div class="services-box-link">
+        <a class="services-button" href="@content.Value("OurServicesBlockUrl")"><span class="arrow-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M6.354 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L11.293 8 6.354 2.354a.5.5 0 0 1 0-.708z"/>
+            </svg>
+        </a>
+    </div>
+</div>

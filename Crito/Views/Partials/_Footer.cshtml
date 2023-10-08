@@ -1,0 +1,75 @@
+﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+@using Umbraco.Cms.Core.Models
+<footer class="footer-class">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3">
+                @*<img src="@Model.Value("footerImage")" alt="footer image"/>*@
+
+
+
+                @*1130
+                2652e3b9-1e09-452b-a0be-6bcae173e8da*@
+
+                
+                @*@{
+                    var imageId = Model.Value<string>("footerLogo"); // Ensure that the value is retrieved as a string
+                    if (!string.IsNullOrEmpty(imageId))
+                    {
+                        var media = Umbraco.Media(Guid.Parse(imageId)); // Use a different variable name (e.g., 'media')
+                        if (media != null)
+                        {
+                            var url = media.Url();
+                            var imageHeight = media.Value<int>("umbracoHeight");
+                            var imageWidth = media.Value<int>("umbracoWidth");
+                            var orientationCssClass = imageWidth > imageHeight ? "img-landscape" : "img-portrait";
+
+                            <img src="@url" alt="@media.Name" class="@orientationCssClass" />
+                        }
+                    }
+                }*@
+                @{
+                        var showcaseImage = Model.Value<MediaWithCrops>("footerLogo");
+                        if (showcaseImage != null)
+                        {
+                            <img src="@showcaseImage.MediaUrl()" class="" alt="@Model.Value("showcaseTitle")" />
+                        }
+                  }
+                
+                <h3>About Crito</h3>
+                <h6>@Model.Value("footerDescription")</h6>
+            </div>
+            <div class="col-md-3">
+                <h4>Contact Us</h4>
+                <address>
+                    <p><strong>Address:</strong> @Model.Value("footerAdress").ToString()</p>
+                    <p><strong>Phone:</strong> @Model.Value("footerPhone").ToString()</p>
+                    <p><strong>Email:</strong> @Model.Value("footerEmail").ToString()</p>
+                </address>
+            </div>
+            <div class="col-md-3">
+                <h4>Follow Us</h4>
+                <ul class="list-unstyled">
+                    <li><a href="#"><i target="_blank" class="social-media-links"></i> Facebook</a></li>
+                    <li><a href="#"><i target="_blank" class="fab fa-twitter"></i> Twitter</a></li>
+                    <li><a href="#"><i target="_blank" class="fab fa-linkedin"></i> LinkedIn</a></li>
+                    <li><a href="#"><i target="_blank" class="fab fa-linkedin"></i> Youtube</a></li>
+                </ul>
+            </div>
+            <div class="col-md-3">
+                <h4>Links</h4>
+                <ul class="list-unstyled">
+                    <li><a href="/free/ebook"><i target="_blank" class="fab fa-facebook"></i> Free Ebooks</a></li>
+                    <li><a href="/tutorials/development"><i target="_blank" class="fab fa-twitter"></i> Development Tutorials</a></li>
+                    <li><a href="/guides/blogs"><i target="_blank" class="fab fa-linkedin"></i> Blog guide</a></li>
+                </ul>
+            </div> 
+        </div>
+        <div class="row">
+            <div class="copyright col-md-12">
+
+                © @DateTime.Now.Year Crito - Sharpest Consulting Company on the market - All Rights Reserved
+            </div>
+        </div>
+    </div>
+</footer>
